@@ -1,0 +1,65 @@
+
+body{
+    
+    
+    background-image: url(pizza.jpg);
+}
+h1{
+    font-family:Papyrus;
+    font-size: 50px;
+    text-shadow: 2px 2px;
+    color: black;
+}
+
+h2{
+    font-family: times;
+    font-size: 25px;
+}
+
+h3{
+    font-family: Papyrus;
+    font-size: 25;
+}
+
+h5{
+    font-family:Papyrus;
+    font-size: 50px;
+    text-shadow: 2px 2px;
+    color: lightsalmon;
+    
+}
+
+.column{
+    float:left;
+    width: 33.33%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button {
+    background-color: #d3a45c; /* Green */
+   
+    color: black;
+    padding: 0px 0px;
+    text-align: center;    
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Papyrus;
+}
+
+.button1{
+    background-color: transparent;
+    font-size: 15px;
+    
+}
+
+.menu{
+    font-family: times;
+    font-size: 25px;
+    background: lightsalmon;
+}

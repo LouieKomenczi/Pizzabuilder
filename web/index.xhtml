@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f = "http://java.sun.com/jsf/core"    
+      xmlns:h = "http://java.sun.com/jsf/html">
+    
+    <h:head>     
+        <title>Build your Pizza</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    
+     
+        <h:body>
+            <center>
+            <hr/>
+            <h1>Build your PIZZA </h1>
+            <h2>                        
+                <h:form id="order">   
+                    <div class="row">    
+                        
+                        <div class="column">
+                            <h3>Chose your base</h3>
+                            <h:selectOneMenu styleClass="menu" value = "#{PizzaBean.base}" >
+                                <f:selectItem itemValue = "Crisp" itemLabel = "Crisp"  /> 
+                                <f:selectItem itemValue = "Regular" itemLabel = "Regular"  />
+                                <f:selectItem itemValue = "Stuffed" itemLabel = "Stuffed"  />
+                            </h:selectOneMenu>
+                        </div> 
+                        
+                        <div class="column">
+                            <h3>Chose your toppings</h3>
+                            <h:selectManyCheckbox id = "chkbx" value = "#{PizzaBean.topping}" layout = "pageDirection">
+                                <f:selectItems value = "#{PizzaBean.topping}"  var = "v" itemLabel = "#{v}" itemValue = "#{v}"/>                               
+                            </h:selectManyCheckbox>                            
+                        </div>
+                        
+                        <div>
+                            <h3>Chose your size</h3>
+                            <h:selectOneRadio value = "#{PizzaBean.selectSize}" layout = "pageDirection" >
+                                <f:selectItem itemValue = "Small" itemLabel = "Small" />
+                                <f:selectItem itemValue = "Medium" itemLabel = "Medium" />
+                                <f:selectItem itemValue = "Large" itemLabel = "Large" />                
+                            </h:selectOneRadio>                             
+                        </div>                        
+                        
+                    </div>                    
+                    
+                    <h:commandButton class = "button" value = "Order" action = "#{PizzaBean.order()}"/>                  
+                    <hr/>
+                    
+                    <div class = "row">
+                        <div class = "column">
+                            <h:selectOneRadio value = "#{PizzaBean.delivery}" layout = "pageDirection" >
+                                <f:selectItem itemValue = "Pick up" itemLabel = "Pick up" />
+                                <f:selectItem itemValue = "Delivery" itemLabel = "Delivery" />                
+                            </h:selectOneRadio>                            
+                        </div>
+                        
+                        <div class = "column">
+                            Name:
+                            <h:inputText value="#{PizzaBean.name}" style="background: lightsalmon;">
+                                <f:validateLength minimum = "1" maximum = "20" />
+                            </h:inputText>
+                        </div>
+                        
+                        <div class="column">
+                            Address:
+                            <h:inputTextarea value="#{PizzaBean.address}" style="width:400px; height:40px; border-style:none; background: lightsalmon;">
+                                <f:validateLength minimum = "0" maximum = "100" />
+                            </h:inputTextarea>
+                            
+                        </div>
+                        
+                        
+                    </div> 
+                      
+                    
+                </h:form>
+            </h2> 
+            <hr/>      
+            <h:button class="button1" value="Admin" outcome="admin" />
+            </center>           
+        </h:body>
+    
+</html>
